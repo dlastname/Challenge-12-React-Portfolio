@@ -1,7 +1,7 @@
 export default function AboutMe() {
   return (
-    <div className="container d-flex justify-content-center align-items-center mt-5">
-      <div className="card p-4 shadow-lg" style={{ maxWidth: "800px" }}>
+
+      <div className="container mt-5 p-4 border rounded shadow-lg bg-white" style={{ maxWidth: "800px" }}>
         <h1 className="text-center mb-4">About Me</h1>
         <p className="text-muted">
           Hi! My name is <strong>Daniel Llorens</strong>, and I truly appreciate
@@ -36,6 +36,5 @@ export default function AboutMe() {
           </em>
         </p>
       </div>
-    </div>
   );
 }
