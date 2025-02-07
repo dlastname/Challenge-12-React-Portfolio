@@ -21,12 +21,14 @@ Ensure you have Node.js installed and ready for running React applications.
 
 ## Usage
 
+NOTE: This project is currently deployed on Netlify, you can find the URL below. 
+
 Once the dependencies are installed, run the application using the following command:
 
     npm run dev
 
 You can view the live version of the portfolio on Netlify at:  
-**[Netlify URL](#)** (will add when available)
+**[Netlify URL](https://react-portfolio-dlastname.netlify.app/)** 
 
 You will be presented with sections such as **About Me**, **Portfolio**, **Contact**, and **Resume**, where you can navigate seamlessly between them using the React Router.
 
