@@ -1,5 +1,6 @@
 import ProjectCard from "../components/ProjectCard";
-import projects from "../assets/projects"; // Your array of project details
+import projects from "../assets/projects"; 
+
 
 export default function Portfolio() {
   return (

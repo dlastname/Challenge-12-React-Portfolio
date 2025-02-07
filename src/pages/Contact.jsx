@@ -93,7 +93,7 @@ function Form() {
               placeholder="Enter your message"
               className="form-control"
               id="message"
-              rows="4" // Makes the box bigger
+              rows="4"
             ></textarea>
           </div>
 

@@ -6,9 +6,9 @@
   }
   
   body {
-    font-family: 'Inter', sans-serif; /* Modern and readable font */
-    background-color: #f8f9fa; /* Light gray background for contrast */
-    color: #212529; /* Dark gray text for readability */
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa; 
+    color: #212529;
     line-height: 1.6;
   }
   
