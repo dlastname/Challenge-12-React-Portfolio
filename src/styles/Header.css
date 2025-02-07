@@ -1,5 +1,38 @@
 h1.navbar-brand {
-    font-size: 2.5rem; /* Adjust the size as needed */
-    font-weight: bold; /* Optional: Make the text bold */
-    color: red;
-  }
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.header-bg {
+  background-image: linear-gradient(
+    140deg,
+    #0201e5 0%,
+    lightblue 50%,
+    #0300a7 75%
+  );
+}
+/* Navigation Bar */
+.navbar {
+  background: linear-gradient(90deg, #002855, #004b87);
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white !important;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  color: white !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  color: goldenrod !important;
+}
+
+.nav-link.active {
+  color: goldenrod !important;
+}

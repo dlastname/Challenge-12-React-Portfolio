@@ -1,0 +1,51 @@
+/* Make sure the whole page fills the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+  
+/* Wrapper for the entire page */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+  
+/* Push content to fill space */
+.content-wrap {
+    flex: 1; /* This makes the content take up remaining space */
+    padding-bottom: 30px; /* Add space at the bottom */
+}
+  
+/* Footer Styling */
+.footer {
+    background: #004b87; /* Deep blue */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: auto; /* Pushes footer to bottom */
+    padding-top: 20px; /* Adds extra padding to top if needed */
+}
+
+/* Flexbox for Centering */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+  
+/* Style the Links */
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+    padding: 8px 12px;
+}
+  
+/* Hover Effects */
+.footer-links a:hover {
+    color: #f8d210;
+}
