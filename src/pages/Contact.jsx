@@ -1,89 +1,109 @@
 import { useState } from "react";
 // import './style.css';
 
-// Here we import a helper function that will check if the email is valid
+// Import helper functions
 import { validateEmail, isFullNameEntered } from "../utils/helpers";
 
 function Form() {
-  // Create state variables for the fields in the form
-  // We are also setting their initial values to an empty string
+  // State variables for form fields
   const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
+  const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Handle input changes
   const handleInputChange = (e) => {
-    // Getting the value and name of the input which triggered the change
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
+    const { name, value } = e.target;
 
-    // Based on the input type, we set the state of either email, username, and password
-    if (inputType === "email") {
-      setEmail(inputValue);
-    } else if (inputType === "userName") {
-      setUserName(inputValue);
-    } else {
-      setPassword(inputValue);
+    if (name === "email") {
+      setEmail(value);
+    } else if (name === "userName") {
+      setUserName(value);
+    } else if (name === "message") {
+      setMessage(value);
     }
   };
 
+  // Handle form submission
   const handleFormSubmit = (e) => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
-    // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
+    // Validate email
     if (!validateEmail(email)) {
       setErrorMessage("Please enter a valid email address");
-      // We want to exit out of this code block if something is wrong so that the user can correct it
       return;
-      // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
     }
+
+    // Validate full name
     if (!isFullNameEntered(userName)) {
       setErrorMessage("Please enter your full name");
-      // We want to exit out of this code block if something is wrong so that the user can correct it
       return;
-      // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
     }
-    // TODO: Maybe make this a modal?
-    alert(`Thank you, ${userName}! I will get back to you shortly`);
 
-    // If everything goes according to plan, we want to clear out the input after a successful registration.
+    // Success message
+    alert(`Thank you, ${userName}! I will get back to you shortly.`);
+
+    // Clear the form
     setUserName("");
-    setPassword("");
     setEmail("");
+    setMessage("");
+    setErrorMessage("");
   };
 
   return (
-    <div className="container text-center">
-      <h1>Contact form {userName}</h1>
-      <form className="form" onSubmit={handleFormSubmit}>
-        <input
-          value={email}
-          name="email"
-          onChange={handleInputChange}
-          type="email"
-          placeholder="email"
-        />
-        <input
-          value={userName}
-          name="userName"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          value={message}
-          name="message"
-          onChange={handleInputChange}
-          type="message"
-          placeholder="Message"
-        />
-        <button type="submit">Submit</button>
-      </form>
-      {errorMessage && (
-        <div>
-          <p className="error-text">{errorMessage}</p>
-        </div>
-      )}
+    <div className="container d-flex justify-content-center mt-5">
+      <div className="card p-4 shadow" style={{ maxWidth: "500px", width: "100%" }}>
+        <h2 className="text-center mb-4">Contact Form</h2>
+        <form className="form" onSubmit={handleFormSubmit}>
+          {/* Full Name */}
+          <div className="mb-3">
+            <label htmlFor="userName" className="form-label">Full Name</label>
+            <input
+              value={userName}
+              name="userName"
+              onChange={handleInputChange}
+              type="text"
+              placeholder="Enter your full name"
+              className="form-control"
+              id="userName"
+            />
+          </div>
+
+          {/* Email */}
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">Email</label>
+            <input
+              value={email}
+              name="email"
+              onChange={handleInputChange}
+              type="email"
+              placeholder="Enter your email"
+              className="form-control"
+              id="email"
+            />
+          </div>
+
+          {/* Message */}
+          <div className="mb-3">
+            <label htmlFor="message" className="form-label">Message</label>
+            <textarea
+              value={message}
+              name="message"
+              onChange={handleInputChange}
+              placeholder="Enter your message"
+              className="form-control"
+              id="message"
+              rows="4" // Makes the box bigger
+            ></textarea>
+          </div>
+
+          {/* Submit Button */}
+          <button type="submit" className="btn btn-primary w-100">Submit</button>
+        </form>
+
+        {/* Error Message */}
+        {errorMessage && <p className="text-danger text-center mt-3">{errorMessage}</p>}
+      </div>
     </div>
   );
 }

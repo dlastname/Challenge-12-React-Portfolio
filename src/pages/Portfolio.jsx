@@ -1,21 +1,15 @@
+import ProjectCard from "../components/ProjectCard";
+import projects from "../assets/projects"; // Your array of project details
+
 export default function Portfolio() {
-    return (
-      <div>
-        <h1>Portfolio Page</h1>
-        <p>
-          Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis
-          molestie urna. Aliquam semper ultrices varius. Aliquam faucibus sit amet
-          magna a ultrices. Aenean pellentesque placerat lacus imperdiet
-          efficitur. In felis nisl, luctus non ante euismod, tincidunt bibendum
-          mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-          posuere, eget tristique dui dapibus. Maecenas fermentum elementum
-          faucibus. Quisque nec metus vestibulum, egestas massa eu, sollicitudin
-          ipsum. Nulla facilisi. Sed ut erat ligula. Nam tincidunt nunc in nibh
-          dictum ullamcorper. Class aptent taciti sociosqu ad litora torquent per
-          conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at
-          rhoncus. Etiam vel condimentum magna, quis tempor nulla.
-        </p>
+  return (
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">My Projects</h1>
+      <div className="row row-cols-1 row-cols-md-3 g-4">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
       </div>
-    );
-  }
-  
+    </div>
+  );
+}
