@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-// import './styles/Header.css'
+import '../styles/Header.css'
 
 const Nav = () => {
   const currentPage = useLocation().pathname;
@@ -13,18 +13,18 @@ const Nav = () => {
             to="/"
             className={currentPage === "/" ? "nav-link active" : "nav-link"}
           >
-            Portfolio
+            About Me
           </Link>
         </li>
 
         <li className="nav-item me-3">
           <Link
-            to="/aboutme"
+            to="/portfolio"
             className={
-              currentPage === "/aboutme" ? "nav-link active" : "nav-link"
+              currentPage === "/portfolio" ? "nav-link active" : "nav-link"
             }
           >
-            About Me
+            Portfolio
           </Link>
         </li>
 
