@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import Header from "./components/Header";
+import Header from "./components/Header";
 // import Footer from './components/Footer';
 import Portfolio from "./pages/Portfolio";
 import AboutMe from "./pages/AboutMe";
@@ -19,7 +19,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/resume" element={<Resume />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

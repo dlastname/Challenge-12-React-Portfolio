@@ -1,13 +1,14 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-// import './styles/Nav.css';
+// import './styles/Header.css'
 
 const Nav = () => {
   const currentPage = useLocation().pathname;
 
   return (
-      <ul className="nav-list">
-        <li className="nav-item">
+    <nav className="navbar-nav ms-auto">
+      <ul className="navbar-nav d-flex flex-row">
+        <li className="nav-item me-3">
           <Link
             to="/"
             className={currentPage === "/" ? "nav-link active" : "nav-link"}
@@ -16,7 +17,7 @@ const Nav = () => {
           </Link>
         </li>
 
-        <li className="nav-item">
+        <li className="nav-item me-3">
           <Link
             to="/aboutme"
             className={
@@ -27,7 +28,7 @@ const Nav = () => {
           </Link>
         </li>
 
-        <li className="nav-item">
+        <li className="nav-item me-3">
           <Link
             to="/contact"
             className={
@@ -49,6 +50,7 @@ const Nav = () => {
           </Link>
         </li>
       </ul>
+    </nav>
   );
 };
 

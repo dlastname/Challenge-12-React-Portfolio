@@ -1,12 +1,14 @@
-import React from 'react';
-import Nav from './Nav.jsx';
-// import './styles/Header.css';
+import React from "react";
+import Nav from "./Nav.jsx";
+import '../styles/Header.css';
+
 
 const Header = () => {
   return (
-    <header className="header">
-      <h1>Daniel</h1>
-      <Nav />
+    <header className="header navbar navbar-light bg-light">
+      <div className="container-fluid">
+        <h1 className="navbar-brand">Daniel Llorens</h1> <Nav />
+      </div>
     </header>
   );
 };
